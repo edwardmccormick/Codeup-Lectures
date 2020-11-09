@@ -26,20 +26,20 @@ console.log("hello from conditionals lec.js!");
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
 //TODO: Write an if statement that alerts true if numberInput is greater than but not equal to 10
-    var lives = 1
-    if (lives == 0) {alert("Sorry, game over.")}
-
-    var weather = "clear"
-if (weather == "snowing") {alert("It's snowing!")}
-
-var numberInput = 11
-if (numberInput > 10) {alert("True")}
-
-//TODO: EXTRA BONUS - Refactor each of the previous statements as functions.
-
-function gameOver(x) {
-   if (x==0) {return alert("Sorry, game over.")}
-}
+//     var lives = 1
+//     if (lives == 0) {alert("Sorry, game over.")}
+//
+//     var weather = "clear"
+// if (weather == "snowing") {alert("It's snowing!")}
+//
+// var numberInput = 11
+// if (numberInput > 10) {alert("True")}
+//
+// //TODO: EXTRA BONUS - Refactor each of the previous statements as functions.
+//
+// function gameOver(x) {
+//    if (x==0) {return alert("Sorry, game over.")}
+// }
 
 
 
@@ -65,17 +65,17 @@ function gameOver(x) {
 //TODO: Write an if statement that alerts true if numberInput is greater than 10, else alert "the number is less than 10"
 //TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!. 
 
-if (lives == 0) {alert("Sorry, game over")} else {alert("Next level!")}
-
-if (weather == "snowing") {alert("It's snowing!")} else {alert("Check back later for more details!")}
-
-if (numberInput > 10) {alert("True, the input number was greater than 10!")} else {alert("the number is less than 10")}
-
-function checkIfGameIsOver(x) {
-    if (x <= 0) {return alert("Sorry, game over")} else {alert("Next level!")}
-}
-
-checkIfGameIsOver(lives)
+// if (lives == 0) {alert("Sorry, game over")} else {alert("Next level!")}
+//
+// if (weather == "snowing") {alert("It's snowing!")} else {alert("Check back later for more details!")}
+//
+// if (numberInput > 10) {alert("True, the input number was greater than 10!")} else {alert("the number is less than 10")}
+//
+// function checkIfGameIsOver(x) {
+//     if (x <= 0) {return alert("Sorry, game over")} else {alert("Next level!")}
+// }
+//
+// checkIfGameIsOver(lives)
 //TODO: EXTRA BONUS - Refactor todo#2 from above as a function.
 
     
@@ -86,6 +86,10 @@ checkIfGameIsOver(lives)
 
 
 //TODO: Write a confirm asking the user if they are 13 years of age or older. If they are, alert "You may proceed", if they are not, alert "Sorry, you are not able to proceed"
+//
+// var overThirteenOrNot = confirm("Are you 13 years old or older?")
+//
+// if (overThirteenOrNot == true) {alert("You may proceed.")} else {alert("Sorry you are not able to proceed.")}
 
 // ================ IF / ELSE IF / ELSE STATEMENT SYNTAX ===============
 // if(condition1){
@@ -100,8 +104,23 @@ checkIfGameIsOver(lives)
 
 // =============== IF / ELSE IF/ELSE STATEMENT EXAMPLES ================
 //TODO Together: Write an if/else if/else statement that alerts "It's snowing!" if weather is equal to "snowing", alerts "It's raining" if weather is equal to "raining", alerts "have a nice day" for all other cases
-
-//TODO Together: refactor the above statement as a function
+//
+// if (weather == "snowing") {alert("It's snowing!")}
+// else if (weather == "raining") {alert("It's raining!")}
+// else {alert("Have a nice day!")};
+//
+// //TODO Together: refactor the above statement as a function
+//
+// function choosyWeather(weatherString) {
+//     if (weatherString == "snowing") {return "It's snowing!"}
+// else if (weatherString == "raining") {return "It's raining!"}
+// else {return "Have a nice day!"}
+// }
+//
+// console.log(choosyWeather(weather))
+// console.log(choosyWeather("snowing"))
+// console.log(choosyWeather("raining"))
+// console.log(choosyWeather("sunshine!"))
 
 // Together: PIZZA PREFERENCE EXAMPLE 
 
@@ -123,15 +142,31 @@ checkIfGameIsOver(lives)
 
 //TODO: Write a function that accepts a string that is a traffic light color as an input. When this function is called, it should return a message informing the user what to do when approaching that color light at an intersection.
 
-
-
+// var light = "red";
+//
+// function trafficLight(lightColor) {
+//     if (lightColor === "green") {return "Green - go ahead"}
+//     else if (lightColor === "yellow") {return "Slow down, watch carefully"}
+//     else if (lightColor ==="red") {return "STOOOOOP!"}
+//     else {return "Do you see a traffic light?"}
+// }
+//
+// console.log(trafficLight("red"))
+// alert(trafficLight("green"))
 
 
 
 // ================ NESTED STATEMENTS ===============
 //TODO Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligble for a license.
 
+var age = 12
+var permit = false
 
+if (age < 15) {alert("The user is not eligible for a learner's permit.")}
+else if (age == 15) {alert("The user is eligible for a learner's permit.")}
+else if (age >= 16 && permit ==true) {alert("The user is eligible for a driver's license")}
+else if (age >= 16 && permit == false) {alert("The user is not eligible for a driver's license")}
+else {alert("Instructions unclear, let's check state law more carefully.")}
 
 
 
@@ -150,6 +185,7 @@ checkIfGameIsOver(lives)
 //     message = "Oops, something went wrong.";
 // }
 // console.log(message);
+
 
 
 // var success = true;
