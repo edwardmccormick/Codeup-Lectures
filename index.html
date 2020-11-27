@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is the Index</title>
+    <!-This is where a bunch of the metadata is going to go, and where CSS code (internal) can go->
+</head>
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+<h3>Login Form:</h3>
+    Username:
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text">
+    <br>
+    Password:
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <br>
+
+    <input type="submit">
+</form>
+
+<form method="post" action="https://request-inspector.glitch.me/">
+    <h3>Registration</h3>
+    <label for=""firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName" value="Your name here">
+    <br>
+    <label for=""lastName">Last Name</label>
+    <input type=="text" id="lastName" name="lastName">
+    <br>
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email">
+    <br>
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <label for="confirm">Confirm Password</label>
+    <input type="password" id="confirm">
+    <br>
+    <label for="about">Tell us about yourself</label>
+    <br>
+    <textarea id="about" name="about" cols="80" rows="4">Your bio here</textarea>
+    <br>
+    <input type="checkbox" name="eula" value="eula">I have read and agee to the <a href="tersm-and-conditions.html">terms and conditions.</a>
+    <br>
+    Preferred Contact Method<br>
+    <input type="checkbox" id="contactText" name="contact" value="text">
+    <label for="contactText">Text</label>
+    <br>
+    <input type="checkbox" id="contactText" name="contact" value="email">
+    <label for="contactEmail">Email</label>
+    <br>
+    <input type="radio" name="gender" value="femaile">Female<br>
+    <input type="radio" name="gender" value="male">Male<br>
+    <input type="radio" name="gender" value="other">Other/Non-Binary<br>
+    <input type="radio" name="gender" value="na">Prefer not to answer<br>
+    <br>
+    <label for="address1">Address line 1</label>
+    <input type="text" id="address1" name="address1" size="25">
+    <br>
+    <label for="address2">Address line 2</label>
+    <input type="text" id="address2" name="address2" size="25">
+    <br>
+    <label for="city">City</label>
+    <input id="city" name="city" type="text" required size="10">
+    <label for="state">State</label>
+    <select id="state" name="state">
+    <option value="MO">Missouri</option>
+    <option value="TX" selected>Texas</option>
+    </select>
+    <br>
+    <br>
+           <button>Register</button>
+</form>
+
+<!--when creating a border/padding - top right bottom left
+
+https://codepen.io/guyroutledge/full/hgpez gives a good understanding of the box modelgit s
+-->
+
+</body>
+</html>
