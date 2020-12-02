@@ -1,0 +1,41 @@
+a {
+
+}
+
+a:hover{
+
+}
+
+
+a:active {
+
+}
+
+a:visited {
+
+}
+
+.Logo {
+    font-size: 3em;
+    padding: .2em;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.Navbar {
+    display: flex;
+    background-color: lightgray;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    /*padding: 1em;*/
+    font-family: 'Work Sans', sans-serif;
+}
+
+.clickable {
+    display: flex;
+    width: 20%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
