@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<H2>Hey here's a header</H2>
+<ul>
+    <li data-dbid="123">Item one</li>
+    <li data-dbid="234">Item two</li>
+</ul>
+
+<p>Pansy. Oh sure! Blame the wizards! Why would I want to know that? You don't know how to do any of those.</p>
+<p>WINDMILLS DO NOT WORK THAT WAY! GOOD NIGHT! Yep, I remember. They came in last at the Olympics, then retired to promote alcoholic beverages! Bender, I didn't know you liked cooking. That's so cute. Negative, bossy meat creature!</p>
+<p>And I'd do it again! And perhaps a third time! But that would be it. Yeah. Give a little credit to our public schools. Noooooo! Leela, Bender, we're going grave robbing. Hey, tell me something. You've got all this money. How come you always dress like you're doing your laundry?</p>
+<p>Yeah. Give a little credit to our public schools. Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. Guess again. Have you ever tried just turning off the TV, sitting down with your children, and hitting them?</p>
+<p>Isn't it true that you have been paid for your testimony? You wouldn't. Ask anyway! Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo! You know, I was God once.</p>
+
+<script>
+    "use strict";
+    (function() {
+        // Get the main heading h1 by id
+        var listItems = document.getElementsByTagName('li');
+
+        for (var i = 0; i < listItems.length; i++) {
+            var dbId = listItems[i].getAttribute("data-dbid");
+            console.log(dbId);
+        }
+        // Prints
+        // 123
+        // 234
+    })();
+        (function() {
+            // Get the body element (notice we need to use index 0 of the array!)
+            var bodyElement = document.getElementsByTagName('body')[0];
+
+            // Change the body font color
+            bodyElement.style.color = '#444'; // Dark grey
+
+            bodyElement.style['background-color'] = "#fefefe"; // Very light grey
+            // We had to use [] syntax since the property name has a dash
+
+            bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
+            // Replace dashes with camelCase to use standard . syntax
+        })();
+</script>
+
+
+</body>
+</html>
