@@ -4,6 +4,18 @@ function roll(x) {
     return Math.floor(Math.random() * (x))+1;
 }
 
+function rolls(x,y,z) {
+    var output = []
+    for (var i = 0; i < x; i++) {
+        output.push(roll(y));
+    }
+    for (var i=0; i<z; i++) {
+        output.splice(output.indexOf(Math.min(...output)),1)
+    }
+    return output
+
+}
+// so to roll 4d6 drop lowest rolls(4,6,1) will generate an array, and then results.reduce(function(total,num) {return total += num},0) will return the total of the three rolls
 function calculateProf() {
    if (parseInt(document.getElementById('pcLevel').value) > 16) {profBonus = 6}
     else if (parseInt(document.getElementById('pcLevel').value) > 12) {profBonus = 5}
