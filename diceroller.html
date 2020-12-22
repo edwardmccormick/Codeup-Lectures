@@ -22,191 +22,215 @@
 </head>
 <body>
 <h1 class="">Welcome to the DnD Companion</h1>
-<form name="characterInfo">
-    <p>My character is a <select class="form-select" aria-label="Select a Class" id="pcClass">
-        <option selected>Custom/Homebrew</option>
-        <option>Barbarian</option>
-        <option>Bard</option>
-        <option>Cleric</option>
-        <option>Druid</option>
-        <option>Fighter</option>
-        <option>Monk</option>
-        <option>Paladin</option>
-        <option>Ranger</option>
-        <option>Rogue</option>
-        <option>Sorcerer</option>
-        <option>Warlock</option>
-        <option>Wizard</option>
-        <option>Artificer</option>
-        <option>Blood Hunter</option>
-    </select> at level <select class="form-select" aria-label="Select a Level" id="pcLevel">
-        <option selected>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-        <option>20</option>
-    </select>. That means my proficiency bonus is: <strong id="profBonus"></strong> </p>
-    <button id="calculate" class="btn btn-dark">Press here to refactor</button>
-
-    <h1>Option 1: I have already generate a character</h1>
-    <p>All I want to do is see my attribute modifiers and so on.</p>
-
- <p>   My stats are Strength <select class="form-select" id="str">
-     <option>1</option>
-     <option>2</option>
-     <option>3</option>
-     <option>4</option>
-     <option>5</option>
-     <option>6</option>
-     <option>7</option>
-     <option>8</option>
-     <option>9</option>
-     <option selected>10</option>
-     <option>11</option>
-     <option>12</option>
-     <option>13</option>
-     <option>14</option>
-     <option>15</option>
-     <option>16</option>
-     <option>17</option>
-     <option>18</option>
-     <option>19</option>
-     <option>20</option>
-</select>
-   Dexterity  <select class="form-select" aria-label="Select a Level" id="dex">
-         <option>1</option>
-         <option>2</option>
-         <option>3</option>
-         <option>4</option>
-         <option>5</option>
-         <option>6</option>
-         <option>7</option>
-         <option>8</option>
-         <option>9</option>
-         <option selected>10</option>
-         <option>11</option>
-         <option>12</option>
-         <option>13</option>
-         <option>14</option>
-         <option>15</option>
-         <option>16</option>
-         <option>17</option>
-         <option>18</option>
-         <option>19</option>
-         <option>20</option>
-     </select>
-
-    Constitution <select class="form-select" aria-label="Select a Level" id="con">
-         <option>1</option>
-         <option>2</option>
-         <option>3</option>
-         <option>4</option>
-         <option>5</option>
-         <option>6</option>
-         <option>7</option>
-         <option>8</option>
-         <option>9</option>
-         <option selected>10</option>
-         <option>11</option>
-         <option>12</option>
-         <option>13</option>
-         <option>14</option>
-         <option>15</option>
-         <option>16</option>
-         <option>17</option>
-         <option>18</option>
-         <option>19</option>
-         <option>20</option>
-     </select>
-
-   Intelligence  <select class="form-select" aria-label="Select a Level" id="int">
-         <option>1</option>
-         <option>2</option>
-         <option>3</option>
-         <option>4</option>
-         <option>5</option>
-         <option>6</option>
-         <option>7</option>
-         <option>8</option>
-         <option>9</option>
-         <option selected>10</option>
-         <option>11</option>
-         <option>12</option>
-         <option>13</option>
-         <option>14</option>
-         <option>15</option>
-         <option>16</option>
-         <option>17</option>
-         <option>18</option>
-         <option>19</option>
-         <option>20</option>
-     </select>
-
-   Wisdom  <select class="form-select" aria-label="Select a Level" id="wis">
-         <option>1</option>
-         <option>2</option>
-         <option>3</option>
-         <option>4</option>
-         <option>5</option>
-         <option>6</option>
-         <option>7</option>
-         <option>8</option>
-         <option>9</option>
-         <option selected>10</option>
-         <option>11</option>
-         <option>12</option>
-         <option>13</option>
-         <option>14</option>
-         <option>15</option>
-         <option>16</option>
-         <option>17</option>
-         <option>18</option>
-         <option>19</option>
-         <option>20</option>
-     </select>
-
- and Charisma <select class="form-select" aria-label="Select a Level" id="cha">
-         <option>1</option>
-         <option>2</option>
-         <option>3</option>
-         <option>4</option>
-         <option>5</option>
-         <option>6</option>
-         <option>7</option>
-         <option>8</option>
-         <option>9</option>
-         <option selected>10</option>
-         <option>11</option>
-         <option>12</option>
-         <option>13</option>
-         <option>14</option>
-         <option>15</option>
-         <option>16</option>
-         <option>17</option>
-         <option>18</option>
-         <option>19</option>
-         <option>20</option>
-     </select></p>
+<ul class="nav nav-tabs " id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="character-built-tab" data-bs-toggle="tab" href="#character-built" role="tab" aria-controls="home" aria-selected="true">I have a character already built</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="character-pointbuy-tab" data-bs-toggle="tab" href="#character-pointbuy" role="tab" aria-controls="profile" aria-selected="false">I want to build a character (point-buy)</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="character-roll-tab" data-bs-toggle="tab" href="#character-roll" role="tab" aria-controls="contact" aria-selected="false">I want to build a character (rolling dice)</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="character-built" role="tabpanel" aria-labelledby="home-tab">
+        <form name="characterInfo">
+        <p>My character is a <select class="form-select" aria-label="Select a Class" id="pcClass">
+            <option selected>Custom/Homebrew</option>
+            <option>Barbarian</option>
+            <option>Bard</option>
+            <option>Cleric</option>
+            <option>Druid</option>
+            <option>Fighter</option>
+            <option>Monk</option>
+            <option>Paladin</option>
+            <option>Ranger</option>
+            <option>Rogue</option>
+            <option>Sorcerer</option>
+            <option>Warlock</option>
+            <option>Wizard</option>
+            <option>Artificer</option>
+            <option>Blood Hunter</option>
+        </select> at level <select class="form-select" aria-label="Select a Level" id="pcLevel">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+        </select>. That means my proficiency bonus is: <strong id="profBonus"></strong> </p>
+<!--        <button id="calculate" class="btn btn-dark">Press here to refactor</button>-->
 
 
-</form>
+        <p>   My stats are Strength <select class="form-select" id="str">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option selected>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+        </select>
+            Dexterity  <select class="form-select" aria-label="Select a Level" id="dex">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option selected>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+            </select>
 
-<h4>That means I have spent <strong id="creation"></strong> points.</h4>
+            Constitution <select class="form-select" aria-label="Select a Level" id="con">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option selected>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+            </select>
+
+            Intelligence  <select class="form-select" aria-label="Select a Level" id="int">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option selected>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+            </select>
+
+            Wisdom  <select class="form-select" aria-label="Select a Level" id="wis">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option selected>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+            </select>
+
+            and Charisma <select class="form-select" aria-label="Select a Level" id="cha">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option selected>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+            </select></p>
+
+
+    </form>
+
+    </div>
+    <div class="tab-pane fade" id="character-pointbuy" role="tabpanel" aria-labelledby="profile-tab">
+        <h4>That means I have spent <strong id="creation"></strong> points.</h4></div>
+
+
+    <div class="tab-pane fade" id="character-roll" role="tabpanel" aria-labelledby="contact-tab">
+
+
+    </div>
+</div>
+
+
+
+
 
 
 
