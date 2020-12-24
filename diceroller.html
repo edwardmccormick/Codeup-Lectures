@@ -65,13 +65,13 @@
     </select>. That means my proficiency bonus is: <strong id="profBonus"></strong> </p>
 <ul class="nav nav-tabs " id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="character-built-tab" data-bs-toggle="tab" href="#character-built" role="tab" aria-controls="home" aria-selected="true">I have a character already built</a>
+        <a class="nav-link active" id="character-built-tab" data-toggle="tab" href="#character-built" role="tab" aria-controls="character-built" aria-selected="true">I have a character already built</a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" id="character-pointbuy-tab" data-bs-toggle="tab" href="#character-pointbuy" role="tab" aria-controls="character-pointbuy" aria-selected="false">I want to build a character (point-buy)</a>
+        <a class="nav-link" id="character-pointbuy-tab" data-toggle="tab" href="#character-pointbuy" role="tab" aria-controls="character-pointbuy" aria-selected="false">I want to build a character (point-buy)</a>
     </li>
     <li class="nav-item" role="presentation">
-        <a class="nav-link" id="character-roll-tab" data-bs-toggle="tab" href="#character-roll" role="tab" aria-controls="character-roll" aria-selected="false">I want to build a character (rolling dice)</a>
+        <a class="nav-link" id="character-roll-tab" data-toggle="tab" href="#character-roll" role="tab" aria-controls="character-roll" aria-selected="false">I want to build a character (rolling dice)</a>
     </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -86,7 +86,7 @@
 
 
     </div>
-    <div class="tab-pane fade show active" id="character-pointbuy" role="tabpanel" aria-labelledby="character-pointbuy-tab">
+    <div class="tab-pane fade show" id="character-pointbuy" role="tabpanel" aria-labelledby="character-pointbuy-tab">
         <p>   My stats are Strength <select class="form-select" id="str">
 
             <option>8</option>
@@ -164,10 +164,31 @@
             </select></p>
         <h4>That means I have spent <strong id="creation"></strong> points.</h4>
 
+        Now pick (assigned by class and level) number of skills:
+
+        <div>Acrobatics (Dex)</div>
+        <div>Animal Handling (Wis)</div>
+        <div>Arcana (Int)</div>
+        <div>Athletics (Str)</div>
+        <div>Deception (Cha)</div>
+        <div>History (Int)</div>
+        <div>Insight (Wis)</div>
+        <div>Intimidation (Cha)</div>
+        <div>Investigation (Int) </div>
+        <div>Medicine (Wis)</div>
+        <div>Nature (Int)</div>
+        <div>Perception (Wis)</div>
+        <div>Performance (Cha)</div>
+        <div> Persuasion (Cha)</div>
+        <div>Religion (Int)</div>
+        <div>Sleight of Hand (Dex)</div>
+        <div>Stealth (Dex)</div>
+        <div>Survival (Wis)</div>
+
     </div>
 
 
-    <div class="tab-pane fade show active" id="character-roll" role="tabpanel" aria-labelledby="character-roll-tab">
+    <div class="tab-pane fade show" id="character-roll" role="tabpanel" aria-labelledby="character-roll-tab">
 <h4>I want to roll  3 or 4 dice for each stat and drop the lowest.</h4>
 
         <p>I want to just roll for my stats - I'd like to roll for 7 stats and drop the lowest attribute.</p>
