@@ -55,6 +55,42 @@ var character = {};
 
 var characterCostGoal = 27;
 
+var skills = [2, "arcana", "history", "investigation", "medicine", "nature", "perception", "sleightofhand"]
+
+var barbarianskills = [2, "animalhandling", "athletics", "intimidation", "nature", "perception", "survival"]
+
+var bardskills = [3, "acrobatics", "athletics", "arcana", "deception", "insight", "intimidation", "investigation", "nature", "perception", "performance", "persuasion", "religion", "sleightofhand", "stealth"]
+
+var clericskills = [2, "history", "insight", "medicine", "persuasion", "religion"]
+
+var druidskills = [2, "animalhandling", "arcana", "insight", "medicine", "nature", "perception", "religion", "survival"]
+
+var fighterskills = [2, "acrobatics", "animalhandling", "athletics", "history", "insight", "intimidation", "perception", "survival"]
+
+var monkskills = [2, "acrobatics", "athletics", "history", "insight", "religion", "stealth"]
+
+var paladinskills = [2, "athletics", "insight", "intimidation", "medicine", "persuasion", "religion"]
+
+var rangerskills = [3, "animalhandling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival"]
+
+var rogueskills = [4, "acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleightofhand", "stealth"]
+
+var sorcererskills = [2, "arcana", "deception", "insight", "intimidation", "persuasion", "religion"]
+
+var warlockskills = [2, "arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"]
+
+var wizardskills = [2, "arcana", "history", "insight", "investigation", "medicine", "religion"]
+
+function parseSkills(x) {
+    // if (x === "barbarian") {var y = barbarianskills};
+    // else if (x==="bard") {var y = bardskills};
+    //
+    // for (var i = 1; i<y.length; i++) {
+    //     document.getElementById("y[i]")
+    // }
+
+}
+
 var proficiencyBonus = document.getElementById('profBonus');
 var characterLevel = document.getElementById('pcLevel');
 var characterClass = document.getElementById('pcClass');
@@ -67,6 +103,7 @@ var characterCharisma = document.getElementById('cha');
 var pointTotals = document.getElementById('creation')
 
 characterLevel.addEventListener('change', calculateProf);
+characterClass.addEventListener('change', parseSkills)
 characterStrength.addEventListener('change', updateCharacter);
 characterDexterity.addEventListener('change', updateCharacter);
 characterConstitution.addEventListener('change', updateCharacter);
