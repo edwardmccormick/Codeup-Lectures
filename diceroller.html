@@ -20,9 +20,9 @@
 
 
 </head>
-<body class="">
+<body class="m-2 p-2">
 <h1 class="">Welcome to the DnD Companion</h1>
-
+<container class="m-2 p-2">
 <form name="character"><br>
     <br>
     <p>My character is a <select class="form-select" aria-label="Select a Class" id="pcClass">
@@ -99,6 +99,7 @@
 
         <button id="calculate" class="btn btn-dark">Press here to refactor</button>
 </div>
+
 <!--<div class="">-->
 <!--    Now pick (assigned by class and level) number of skills:-->
 
@@ -209,39 +210,41 @@
             </select></p>
         <h4>That means I have spent <strong id="creation"></strong> points.</h4>
 
-        Now pick (assigned by class and level) number of skills:
-
-        <div><input type="checkbox" class="form-check-input" value="acrobatics" id="acrobatics">Acrobatics (Dex) <span id="acrobaticstext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="animalhandling">Animal Handling (Wis) <span id="animalhandlingtext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="arcana">Arcana (Int) <span id="arcanatext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="athletics"> Athletics (Str) <span id="athleticstext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="deception">Deception (Cha) <span id="deceptiontext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="history">History (Int) <span id="historytext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="insight">Insight (Wis) <span id="insighttext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="intimidation">Intimidation (Cha) <span id="intimidationtext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="investigation">Investigation (Int) <span id="investigationtext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="medicine">Medicine (Wis) <span id="medicinetext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="nature">Nature (Int) <span id="naturetext"></span> </div>
-        <div><input type="checkbox" class="form-check-input" id="perception">Perception (Wis) <span id="perceptiontext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="performance">Performance (Cha) <span id="performancetext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="persuasion"> Persuasion (Cha) <span id="persuasiontext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="religion">Religion (Int) <span id="religiontext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="sleightofhand">Sleight of Hand (Dex) <span id="sleightofhandtext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="stealth">Stealth (Dex) <span id="stealthtext"></span></div>
-        <div><input type="checkbox" class="form-check-input" id="survival">Survival (Wis) <span id="survivaltext"></span></div>
+        Now pick <span id="numberOfSkills"> (assigned by class and level) number</span> of skills:
+<div class="text-center">
+        <div><input type="checkbox" class="form-check-input" value="acrobatics" id="acrobatics" disabled>Acrobatics (Dex) <span id="acrobaticstext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="animalhandling" disabled>Animal Handling (Wis) <span id="animalhandlingtext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="arcana" disabled>Arcana (Int) <span id="arcanatext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="athletics" disabled> Athletics (Str) <span id="athleticstext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="deception" disabled>Deception (Cha) <span id="deceptiontext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="history" disabled>History (Int) <span id="historytext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="insight" disabled>Insight (Wis) <span id="insighttext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="intimidation" disabled>Intimidation (Cha) <span id="intimidationtext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="investigation" disabled>Investigation (Int) <span id="investigationtext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="medicine" disabled>Medicine (Wis) <span id="medicinetext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="nature" disabled>Nature (Int) <span id="naturetext"></span> </div>
+        <div><input type="checkbox" class="form-check-input" id="perception" disabled>Perception (Wis) <span id="perceptiontext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="performance" disabled>Performance (Cha) <span id="performancetext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="persuasion" disabled> Persuasion (Cha) <span id="persuasiontext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="religion" disabled>Religion (Int) <span id="religiontext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="sleightofhand" disabled>Sleight of Hand (Dex) <span id="sleightofhandtext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="stealth" disabled>Stealth (Dex) <span id="stealthtext"></span></div>
+        <div><input type="checkbox" class="form-check-input" id="survival" disabled>Survival (Wis) <span id="survivaltext"></span></div>
 
     </div>
-
+    </div>
 
     <div class="tab-pane fade show" id="character-roll" role="tabpanel" aria-labelledby="character-roll-tab">
-<h4>I want to roll  3 or 4 dice for each stat and drop the lowest.</h4>
+        <h4>I want to roll  <select class="form-select" aria-label="How many dice?" id="dice"> <option>3</option><option>4</option><option>5</option></select> for each stat and drop <span id="droppedDice">0</span>.</h4>
 
-        <p>I want to just roll for my stats - I'd like to roll for 7 stats and drop the lowest attribute.</p>
+        <p>Roll that number of dice for me<select class="form-select" aria-label="How many attribute rolls?" id="attributeRolls"><option>6</option><option>7</option><option>8</option></select> times and I will choose the array to use.</p>
+
+        <div class="row" id="diceOutput"></div>
 
     </div>
 </div>
 </form>
-
+</container>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

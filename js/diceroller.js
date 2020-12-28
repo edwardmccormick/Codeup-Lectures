@@ -4,17 +4,24 @@ function roll(x) {
     return Math.floor(Math.random() * (x))+1;
 }
 
-function rolls(x,y,z) {
+function rolls(x,y) {
     var output = []
     for (var i = 0; i < x; i++) {
         output.push(roll(y));
     }
+    return output
+}
+
+function dropLowest(output,z) {
     for (var i=0; i<z; i++) {
         output.splice(output.indexOf(Math.min(...output)),1)
     }
     return output
 
 }
+
+
+
 // so to roll 4d6 drop lowest rolls(4,6,1) will generate an array, and then results.reduce(function(total,num) {return total += num},0) will return the total of the three rolls
 function calculateProf() {
    if (parseInt(document.getElementById('pcLevel').value) > 16) {profBonus = 6}
@@ -55,7 +62,7 @@ var character = {};
 
 var characterCostGoal = 27;
 
-var skills = [2, "arcana", "history", "investigation", "medicine", "nature", "perception", "sleightofhand"]
+var artificerskills = [2, "arcana", "history", "investigation", "medicine", "nature", "perception", "sleightofhand"]
 
 var barbarianskills = [2, "animalhandling", "athletics", "intimidation", "nature", "perception", "survival"]
 
@@ -81,14 +88,41 @@ var warlockskills = [2, "arcana", "deception", "history", "intimidation", "inves
 
 var wizardskills = [2, "arcana", "history", "insight", "investigation", "medicine", "religion"]
 
-function parseSkills(x) {
-    // if (x === "barbarian") {var y = barbarianskills};
-    // else if (x==="bard") {var y = bardskills};
-    //
-    // for (var i = 1; i<y.length; i++) {
-    //     document.getElementById("y[i]")
-    // }
+var allSkills = ["as many as delineated in the homebrew class", "acrobatics", "animalhandling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medicine", "perception", "performance", "persuasion", "religion", "sleightofhand", "stealth", "survival"]
 
+function parseSkills() {
+    for (var i = 1; i < allSkills.length; i++) {
+        document.getElementById(allSkills[i]).disabled = true;
+        document.getElementById(allSkills[i]).checked = false;
+    }
+    if (characterClass.value === "Artificer") {var y = artificerskills};
+    if (characterClass.value === "Barbarian") {var y = barbarianskills};
+    if (characterClass.value === "Bard") {var y = bardskills};
+    if (characterClass.value === "Cleric") {var y = clericskills}
+    if (characterClass.value === "Druid") {var y = druidskills};
+    if (characterClass.value === "Fighter") {var y = fighterskills};
+    if (characterClass.value === "Monk") {var y = monkskills};
+    if (characterClass.value === "Paladin") {var y = paladinskills};
+    if (characterClass.value === "Ranger") {var y = rangerskills};
+    if (characterClass.value === "Rogue") {var y = rogueskills};
+    if (characterClass.value === "Sorcerer") {var y = sorcererskills};
+    if (characterClass.value === "Warlock") {var y = warlockskills};
+    if (characterClass.value === "Wizard") {var y = wizardskills};
+    if (characterClass.value === "Custom/Homebrew") {var y = allSkills}
+    for (var i = 1; i < y.length; i++) {
+        document.getElementById(y[i]).disabled = false;
+    }
+document.getElementById('numberOfSkills').innerHTML = "<strong> " + y[0] + " </strong>"
+}
+
+function onlyRollThree() {
+    diceToDrop.innerText = parseInt(diceToRoll.value) - 3
+}
+
+function diceCards() {
+    for (var i = 0; i < attributeRolls.value; i++) {
+        diceOutput.innerHTML = rolls(diceToRoll.value, 6)
+    }
 }
 
 var proficiencyBonus = document.getElementById('profBonus');
@@ -101,6 +135,28 @@ var characterIntelligence = document.getElementById('int');
 var characterWisdom = document.getElementById('wis');
 var characterCharisma = document.getElementById('cha');
 var pointTotals = document.getElementById('creation')
+var acrobatics = document.getElementById('acrobatics');
+var animalhandling = document.getElementById('animalhandling');
+var arcana = document.getElementById('arcana');
+var athletics = document.getElementById('athletics');
+var deception = document.getElementById('deception');
+var historySkill = document.getElementById('history');
+var insight = document.getElementById('insight');
+var intimidation = document.getElementById('intimidation');
+var investigation = document.getElementById('investigation');
+var medicine = document.getElementById('medicine');
+var nature = document.getElementById('nature');
+var perception = document.getElementById('perception');
+var performance = document.getElementById('performance');
+var persuasion = document.getElementById('persuasion');
+var religion = document.getElementById('religion');
+var sleightOfHand = document.getElementById('sleightofhand');
+var stealth = document.getElementById('stealth');
+var survival = document.getElementById('survival');
+var diceToRoll = document.getElementById('dice')
+var diceToDrop = document.getElementById('droppedDice')
+var attributeRolls = document.getElementById('attributeRolls')
+var diceOutput = document.getElementById('diceOutput')
 
 characterLevel.addEventListener('change', calculateProf);
 characterClass.addEventListener('change', parseSkills)
@@ -110,3 +166,5 @@ characterConstitution.addEventListener('change', updateCharacter);
 characterIntelligence.addEventListener('change', updateCharacter);
 characterWisdom.addEventListener('change', updateCharacter);
 characterCharisma.addEventListener('change', updateCharacter);
+diceToRoll.addEventListener('change', onlyRollThree)
+attributeRolls.addEventListener('change', diceCards)
