@@ -20,7 +20,17 @@ function dropLowest(output,z) {
 
 }
 
+function idLowest(output,z) {
+    var lowest = []
+    for (var i=0; i<z; i++) {
+        lowest += output.splice(output.indexOf(Math.min(...output)),1)
+    }
+    return lowest
+}
 
+function sumOfAttributeRoll(x) {
+    return x[0] + x[1] + x[2];
+}
 
 // so to roll 4d6 drop lowest rolls(4,6,1) will generate an array, and then results.reduce(function(total,num) {return total += num},0) will return the total of the three rolls
 function calculateProf() {
@@ -119,9 +129,13 @@ function onlyRollThree() {
     diceToDrop.innerText = parseInt(diceToRoll.value) - 3
 }
 
-function diceCards() {
-    for (var i = 0; i < attributeRolls.value; i++) {
-        diceOutput.innerHTML = rolls(diceToRoll.value, 6)
+function diceCards(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    diceOutput.innerHTML = "Rolling dice..."
+
+    for (var i = 1; i <= attributeRolls.value; i++) {
+        var output = rolls(diceToRoll.value, 6)
+        diceOutput.innerHTML += "Array number " + i +" is: " + output + ". Discarding the lowest roll: " + idLowest(output,1) + ". The total for this array is: " + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ ". "
     }
 }
 
@@ -157,6 +171,7 @@ var diceToRoll = document.getElementById('dice')
 var diceToDrop = document.getElementById('droppedDice')
 var attributeRolls = document.getElementById('attributeRolls')
 var diceOutput = document.getElementById('diceOutput')
+var rollDice = document.getElementById('rolldice')
 
 characterLevel.addEventListener('change', calculateProf);
 characterClass.addEventListener('change', parseSkills)
@@ -167,4 +182,4 @@ characterIntelligence.addEventListener('change', updateCharacter);
 characterWisdom.addEventListener('change', updateCharacter);
 characterCharisma.addEventListener('change', updateCharacter);
 diceToRoll.addEventListener('change', onlyRollThree)
-attributeRolls.addEventListener('change', diceCards)
+rollDice.addEventListener('click', diceCards)
