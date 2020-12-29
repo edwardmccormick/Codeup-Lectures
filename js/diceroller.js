@@ -129,13 +129,22 @@ function onlyRollThree() {
     diceToDrop.innerText = parseInt(diceToRoll.value) - 3
 }
 
+
+
+
+
 function diceCards(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    diceOutput.innerHTML = "Rolling dice..."
-
+    diceOutput.innerHTML = ""
     for (var i = 1; i <= attributeRolls.value; i++) {
         var output = rolls(diceToRoll.value, 6)
-        diceOutput.innerHTML += "Array number " + i +" is: " + output + ". Discarding the lowest roll: " + idLowest(output,1) + ". The total for this array is: " + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ ". "
+        // diceOutput.innerHTML += "Array number " + i +" is: " + output + ". Discarding the lowest roll: " + idLowest(output, parseInt(diceToDrop.innerText)) + ". The total for this array is: " + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ ".<br>"
+        var html = '<div className="card" class="col-3">'
+            html += '<div className="card-body">'
+            html +=  '<h5 className="card-title">Attribute Roll Number ' + i + '</h5>'
+            if (diceToRoll.value > 3 ) {html +=  '<p className="card-text">The output of these rolls are: ' + output + '. The lowest roll: ' + idLowest(output, parseInt(diceToDrop.innerText)) + '; dropping that from your total. The total for these rolls are: <strong>' + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ '</strong>.</p></div></div>'}
+            if (diceToRoll.value == 3) {html +=  '<p className="card-text">The output of this array is: ' + output + '. You only rolled three dice, so no dice to drop. The total for these rolls is: <strong>' + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ '</strong>.</p></div></div>'}
+        diceOutput.innerHTML += html
     }
 }
 
