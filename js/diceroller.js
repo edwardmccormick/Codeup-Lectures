@@ -136,7 +136,7 @@ function diceCards(e) {
     for (var i = 1; i <= attributeRolls.value; i++) {
         var output = rolls(diceToRoll.value, 6)
         // diceOutput.innerHTML += "Array number " + i +" is: " + output + ". Discarding the lowest roll: " + idLowest(output, parseInt(diceToDrop.innerText)) + ". The total for this array is: " + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ ".<br>"
-        var html = '<div className="card" class="col-3">'
+        var html = '<div className="card draggable border border-dark" class="col-3">'
             html += '<div className="card-body">'
             html +=  '<h5 className="card-title">Attribute Roll Number ' + i + '</h5>'
 

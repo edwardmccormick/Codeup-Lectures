@@ -63,7 +63,23 @@
         <option>18</option>
         <option>19</option>
         <option>20</option>
-    </select>. That means my proficiency bonus is: <strong id="profBonus"></strong> </p>
+    </select>. That means my proficiency bonus is: <strong id="profBonus"></strong> </p><br>
+    <br>
+    <div><p>My character is a <select class="form-select" aria-label="Select a Race" id="pcRace"><option selected>Human</option><option>Dragonborn</option><option>Dwarf</option><option>Elf</option><option>Gnome</option><option>Half-Elf</option><option>Half-Orc</option><option>Halfling</option><option>Tiefling</option></select>
+
+    <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" id="dontAddRacialModifierToggle" name="radio-stacked" required aria-selected="true">
+        <label class="custom-control-label" for="dontAddRacialModifierToggle">Do NOT add the racial modifiers for <span id="pcRaceMirror">my race choice</span> to my attributes.</label>
+    </div>
+    <div class="custom-control custom-radio mb-3">
+        <input type="radio" class="custom-control-input" id="addRacialModifierToggle" name="radio-stacked" required>
+        <label class="custom-control-label" for="addRacialModifierToggle">Add my racial modifiers for <span id="pcRaceMirror2">my race choice</span> to my attributes. Warning - this will modify your base attributes.</label>
+        <div class="invalid-feedback">More example invalid feedback text</div>
+    </div>
+
+    </p>
+    </div>
+
 <ul class="nav nav-tabs " id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
         <a class="nav-link active" id="character-built-tab" data-toggle="tab" href="#character-built" role="tab" aria-controls="character-built" aria-selected="true">I have a character already built</a>
@@ -71,7 +87,7 @@
     <li class="nav-item" role="presentation">
         <a class="nav-link" id="character-pointbuy-tab" data-toggle="tab" href="#character-pointbuy" role="tab" aria-controls="character-pointbuy" aria-selected="false">I want to build a character (point-buy)</a>
     </li>
-    <li class="nav-item bg-secondary" role="presentation">
+    <li class="nav-item" role="presentation">
         <a class="nav-link " id="character-roll-tab" data-toggle="tab" href="#character-roll" role="tab" aria-controls="character-roll" aria-selected="false">I want to build a character (rolling dice)</a>
     </li>
 </ul>
