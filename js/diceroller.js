@@ -23,7 +23,7 @@ function dropLowest(output,z) {
 function idLowest(output,z) {
     var lowest = []
     for (var i=0; i<z; i++) {
-        lowest += output.splice(output.indexOf(Math.min(...output)),1)
+        lowest.push(output.splice(output.indexOf(Math.min(...output)),1))
     }
     return lowest
 }
@@ -130,9 +130,6 @@ function onlyRollThree() {
 }
 
 
-
-
-
 function diceCards(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     diceOutput.innerHTML = ""
@@ -142,7 +139,9 @@ function diceCards(e) {
         var html = '<div className="card" class="col-3">'
             html += '<div className="card-body">'
             html +=  '<h5 className="card-title">Attribute Roll Number ' + i + '</h5>'
-            if (diceToRoll.value > 3 ) {html +=  '<p className="card-text">The output of these rolls are: ' + output + '. The lowest roll: ' + idLowest(output, parseInt(diceToDrop.innerText)) + '; dropping that from your total. The total for these rolls are: <strong>' + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ '</strong>.</p></div></div>'}
+
+        if (diceToRoll.value == 5 ) {html +=  '<p className="card-text">The output of these rolls are: ' + output + '. The lowest rolls are: ' + idLowest(output, parseInt(diceToDrop.innerText)) + '; dropping those from your total. The total for your rolls are: <strong>' + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ '</strong>.</p></div></div>'}
+        if (diceToRoll.value == 4 ) {html +=  '<p className="card-text">The output of these rolls are: ' + output + '. The lowest roll: ' + idLowest(output, parseInt(diceToDrop.innerText)) + '; dropping that from your total. The total for these rolls are: <strong>' + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ '</strong>.</p></div></div>'}
             if (diceToRoll.value == 3) {html +=  '<p className="card-text">The output of this array is: ' + output + '. You only rolled three dice, so no dice to drop. The total for these rolls is: <strong>' + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ '</strong>.</p></div></div>'}
         diceOutput.innerHTML += html
     }

@@ -65,10 +65,10 @@
         <option>20</option>
     </select>. That means my proficiency bonus is: <strong id="profBonus"></strong> </p>
 <ul class="nav nav-tabs " id="myTab" role="tablist">
-    <li class="nav-item bg-secondary" role="presentation">
-        <a class="nav-link" id="character-built-tab" data-toggle="tab" href="#character-built" role="tab" aria-controls="character-built" aria-selected="true">I have a character already built</a>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="character-built-tab" data-toggle="tab" href="#character-built" role="tab" aria-controls="character-built" aria-selected="true">I have a character already built</a>
     </li>
-    <li class="nav-item bg-secondary" role="presentation">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" id="character-pointbuy-tab" data-toggle="tab" href="#character-pointbuy" role="tab" aria-controls="character-pointbuy" aria-selected="false">I want to build a character (point-buy)</a>
     </li>
     <li class="nav-item bg-secondary" role="presentation">
@@ -78,24 +78,25 @@
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="character-built" role="tabpanel" aria-labelledby="character-built-tab">
 <div class="">
-<div class="">
-        <label for-="strinput" class="form-label">Str</label>
-        <input type="number" id="strinput" class="form-control">
+<div class="d-flex">
+        <div><label for-="strinput" class="form-label">Str</label>
+            <input type="number" id="strinput" class="form-control"></div>
 
+    <div>
         <label for-="dexinput" class="form-label">Dex</label>
-        <input type="number" id="dexinput" class="form-control">
+    <input type="number" id="dexinput" class="form-control"></div>
 
-        <label for-="coninput" class="form-label">Con</label>
-        <input type="number" id="coninput" class="form-control">
+<div>        <label for-="coninput" class="form-label">Con</label>
+    <input type="number" id="coninput" class="form-control"></div>
 
-        <label for-="intinput" class="form-label">Int</label>
-        <input type="number" id="intinput" class="form-control">
+        <div><label for-="intinput" class="form-label">Int</label>
+            <input type="number" id="intinput" class="form-control"></div>
 
-        <label for-="wisinput" class="form-label">Wis</label>
-        <input type="number" id="wisinput" class="form-control">
+        <div><label for-="wisinput" class="form-label">Wis</label>
+            <input type="number" id="wisinput" class="form-control"></div>
 
-        <label for-="chainput" class="form-label">Cha</label>
-        <input type="number" id="chainput" class="form-control">
+        <div><label for-="chainput" class="form-label">Cha</label>
+            <input type="number" id="chainput" class="form-control"></div>
 
 
 </div>
@@ -209,9 +210,24 @@
 
             </select></p>
         <h4>That means I have spent <strong id="creation"></strong> points.</h4>
+    </div>
+    </div>
 
-        Now pick <span id="numberOfSkills"> (assigned by class and level) number</span> of skills:
-<div class="text-center">
+
+    <div class="tab-pane fade show" id="character-roll" role="tabpanel" aria-labelledby="character-roll-tab">
+        <h4>I want to roll  <select class="form-select" aria-label="How many dice?" id="dice"> <option>3</option><option>4</option><option>5</option></select> for each stat and drop <span id="droppedDice">0</span>.</h4>
+
+        <p>Roll that number of dice for me<select class="form-select" aria-label="How many attribute rolls?" id="attributeRolls"><option>6</option><option>7</option><option>8</option></select> times and I will choose the array(s) to use.</p>
+
+        <button id="rolldice" class="btn btn-dark">Press here to roll</button>
+
+        <div class="d-flex flex-wrap justify-content-center" id="diceOutput"></div>
+
+    </div>
+</div>
+
+    Now pick <span id="numberOfSkills"> (assigned by class and level) number</span> of skills:
+    <div class="text-center">
         <div><input type="checkbox" class="form-check-input" value="acrobatics" id="acrobatics" disabled>Acrobatics (Dex) <span id="acrobaticstext"></span></div>
         <div><input type="checkbox" class="form-check-input" id="animalhandling" disabled>Animal Handling (Wis) <span id="animalhandlingtext"></span></div>
         <div><input type="checkbox" class="form-check-input" id="arcana" disabled>Arcana (Int) <span id="arcanatext"></span></div>
@@ -232,19 +248,6 @@
         <div><input type="checkbox" class="form-check-input" id="survival" disabled>Survival (Wis) <span id="survivaltext"></span></div>
 
     </div>
-    </div>
-
-    <div class="tab-pane fade show" id="character-roll" role="tabpanel" aria-labelledby="character-roll-tab">
-        <h4>I want to roll  <select class="form-select" aria-label="How many dice?" id="dice"> <option>3</option><option>4</option><option>5</option></select> for each stat and drop <span id="droppedDice">0</span>.</h4>
-
-        <p>Roll that number of dice for me<select class="form-select" aria-label="How many attribute rolls?" id="attributeRolls"><option>6</option><option>7</option><option>8</option></select> times and I will choose the array(s) to use.</p>
-
-        <button id="rolldice" class="btn btn-dark">Press here to roll</button>
-
-        <div class="row" id="diceOutput"></div>
-
-    </div>
-</div>
 </form>
 </container>
 
