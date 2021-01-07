@@ -136,7 +136,7 @@ function diceCards(e) {
     for (var i = 1; i <= attributeRolls.value; i++) {
         var output = rolls(diceToRoll.value, 6)
         // diceOutput.innerHTML += "Array number " + i +" is: " + output + ". Discarding the lowest roll: " + idLowest(output, parseInt(diceToDrop.innerText)) + ". The total for this array is: " + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ ".<br>"
-        var html = '<div className="card draggable border border-dark" class="col-3">'
+        var html = '<div className="card border border-dark" class="col-3">'
             html += '<div className="card-body">'
             html +=  '<h5 className="card-title">Attribute Roll Number ' + i + '</h5>'
 
@@ -145,6 +145,7 @@ function diceCards(e) {
             if (diceToRoll.value == 3) {html +=  '<p className="card-text">The output of this array is: ' + output + '. You only rolled three dice, so no dice to drop. The total for these rolls is: <strong>' + (parseInt(output[0]) + parseInt(output[1]) + parseInt(output [2]) )+ '</strong>.</p></div></div>'}
         diceOutput.innerHTML += html
     }
+
 }
 
 var proficiencyBonus = document.getElementById('profBonus');
